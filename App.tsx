@@ -1,18 +1,15 @@
-import { StatusBar } from 'expo-status-bar'
-import { SafeAreaView, Text, View, Image } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import HomeScreen from './screens/HomeScreen'
+
+const Stack = createNativeStackNavigator()
 
 export default function App() {
     return (
-        <SafeAreaView className='flex-1 items-center justify-center bg-black '>
-            <Text className='text-white'>🚀 Welcome to my React Native APP!</Text>
-            <Text className='text-white m-2 text-4xl'>😉</Text>
-            <Image
-                source={{
-                    uri: 'https://i.ebayimg.com/00/s/MTIwMFgxMzQ1/z/wVMAAOSwMGVaZAtC/$_57.JPG?set_id=8800005007',
-                }}
-                className='w-full h-64'
-            />
-            <StatusBar style='auto' />
-        </SafeAreaView>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen name='Home' component={HomeScreen} />
+            </Stack.Navigator>
+        </NavigationContainer>
     )
 }
