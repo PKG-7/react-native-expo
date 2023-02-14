@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { Image, SafeAreaView, Text } from 'react-native'
+import { Image, SafeAreaView, Text, View, TouchableOpacity } from 'react-native'
 
 const HomeScreen = () => {
     return (
@@ -12,6 +12,11 @@ const HomeScreen = () => {
                 }}
                 className='w-full h-64'
             />
+            <TouchableOpacity>
+                <View className='bg mt-5 bg-purple-700 py-3 px-8 rounded-xl font-bold'>
+                    <Text className='text-white text-4xl'>Start</Text>
+                </View>
+            </TouchableOpacity>
             <StatusBar style='auto' />
         </SafeAreaView>
     )
